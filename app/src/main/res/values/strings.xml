@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MigraineApp</string>
+    <string name="app_name">Find My Migraine</string>
     <string name="hello_world">Hello world!</string>
+    <string name="welcome">What do you want to do?</string>
+    <string name="record_attack">Record Attack</string>
+    <string name="record_activity">Record Daily Activity</string>
     <string name="action_settings">Settings</string>
 
 </resources>
