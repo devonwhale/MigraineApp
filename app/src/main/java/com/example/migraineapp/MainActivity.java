@@ -1,12 +1,14 @@
 package com.example.migraineapp;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.DialogFragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements LoginPopup.LoginPopupListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,16 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
 
+        if (id == R.id.action_login) {
+            DialogFragment d = new LoginPopup();
+            //d.show(getSupportFragmentManager(), "LoginPopup");
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment d) {
+        //Add login code
     }
 }

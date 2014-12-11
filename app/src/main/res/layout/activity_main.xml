@@ -8,10 +8,10 @@
     <TextView android:text="@string/welcome" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
-        android:layout_marginTop="57dp"
-        android:layout_below="@+id/logo"
+        android:textSize="25dp"
+        android:layout_above="@+id/recAttack"
         android:layout_centerHorizontal="true"
-        android:textSize="25dp" />
+        android:layout_marginBottom="85dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -19,25 +19,29 @@
         android:id="@+id/logo"
         android:src="@drawable/logo_small"
         android:contentDescription="Find My Migraine"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/record_attack"
         android:id="@+id/recAttack"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="57dp" />
+        android:textSize="30dp"
+        android:layout_above="@+id/recActivity"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginBottom="55dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/record_activity"
         android:id="@+id/recActivity"
-        android:layout_below="@+id/recAttack"
+        android:textSize="30dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginBottom="215dp" />
 
 </RelativeLayout>
