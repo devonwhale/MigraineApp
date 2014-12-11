@@ -10,5 +10,7 @@
     <string name="action_help">Help</string>
     <string name="login">Login screen</string>
     <string name="okay">Okay</string>
+    <string name="title_activity_attack">Attack Record</string>
+    <string name="title_activity_daily">DailyActivity</string>
 
 </resources>

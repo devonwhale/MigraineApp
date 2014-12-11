@@ -1,11 +1,15 @@
 package com.example.migraineapp;
 
 import android.app.DialogFragment;
-import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity implements LoginPopup.LoginPopupListener {
@@ -14,6 +18,15 @@ public class MainActivity extends ActionBarActivity implements LoginPopup.LoginP
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button but_attack = (Button) findViewById(R.id.recAttack);
+        but_attack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mv_att = new Intent(getApplicationContext(), AttackActivity.class);
+                startActivity(mv_att);
+            }
+        });
     }
 
 
@@ -39,6 +52,10 @@ public class MainActivity extends ActionBarActivity implements LoginPopup.LoginP
         if (id == R.id.action_login) {
             DialogFragment d = new LoginPopup();
             //d.show(getSupportFragmentManager(), "LoginPopup");
+        }
+
+        if (id == R.id.action_help) {
+            //Display Help fragment
         }
 
         return super.onOptionsItemSelected(item);
