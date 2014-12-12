@@ -21,6 +21,10 @@ public class MainActivity extends ActionBarActivity implements LoginPopup.LoginP
 
         Button but_attack = (Button) findViewById(R.id.recAttack);
         but_attack.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Moves to the Attack Recorder
+             * @param v The current view
+             */
             @Override
             public void onClick(View v) {
                 Intent mv_att = new Intent(getApplicationContext(), AttackActivity.class);
@@ -30,6 +34,10 @@ public class MainActivity extends ActionBarActivity implements LoginPopup.LoginP
 
         Button but_daily = (Button) findViewById(R.id.recActivity);
         but_daily.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Moves to the Daily Activity Recorder
+             * @param v The current view
+             */
             @Override
             public void onClick(View v) {
                 Intent mv_daily = new Intent(getApplicationContext(), DailyActivity.class);
@@ -46,6 +54,11 @@ public class MainActivity extends ActionBarActivity implements LoginPopup.LoginP
         return true;
     }
 
+    /**
+     * Preforms the relevant action when an option is selected
+     * @param item The item selected
+     * @return If the operation is successful
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -70,6 +83,10 @@ public class MainActivity extends ActionBarActivity implements LoginPopup.LoginP
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Deals with the button being clicked on the Login page
+     * @param d The Fragment this is coming from
+     */
     @Override
     public void onDialogPositiveClick(DialogFragment d) {
         //Add login code
