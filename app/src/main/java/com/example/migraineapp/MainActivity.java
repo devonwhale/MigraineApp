@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-
+//Comment by Steve to test change/version control
 public class MainActivity extends ActionBarActivity implements LoginPopup.LoginPopupListener {
 
     @Override
