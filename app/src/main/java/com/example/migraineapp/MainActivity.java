@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 //Comment by Steve to test change/version control
+// Viewed by Sumaia
 public class MainActivity extends ActionBarActivity implements LoginPopup.LoginPopupListener {
 
     @Override
