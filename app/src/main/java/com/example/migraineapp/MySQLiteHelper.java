@@ -11,12 +11,14 @@ import android.util.Log;
 public class MySQLiteHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "migraine.db";
-    private static final String TABLE_SLEEPING = "sleeping";
 
+    //Sleeping Table Details
+    public static final String TABLE_SLEEPING = "sleeping";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_TIME_TO_BED = "time to bed";
     public static final String COLUMN_TIME_UP= "time up";
     public static final String COLUMN_SLEEP_RATING= "sleep rating";
+    public static final String[] COLUMNS_SlEEPING = {COLUMN_ID,COLUMN_TIME_TO_BED,COLUMN_TIME_UP,COLUMN_SLEEP_RATING};
 
     private static final String CREATE_SLEEPING_TABLE = "CREATE TABLE " +
             TABLE_SLEEPING + "("

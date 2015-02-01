@@ -30,7 +30,7 @@ public class Sleeping {
 
 
     // Setters
-    public void setID (int xID) {
+    public void setID (long xID) {
         this.id = xID;
     }
 
