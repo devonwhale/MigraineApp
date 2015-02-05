@@ -12,5 +12,10 @@
     <string name="okay">Okay</string>
     <string name="title_activity_attack">Attack Record</string>
     <string name="title_activity_daily">Daily Activity Record</string>
+    <string name="title_activity_sleep">Daily Sleeping Activity</string>
+    <string name="sleep_tt">Time to sleep</string>
+    <string name="sleep_tu">Time up</string>
+    <string name="sleep_r">Sleep rating</string>
+    <string name="submit">Submit</string>
 
 </resources>

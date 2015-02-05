@@ -20,7 +20,7 @@
         <activity
             android:name=".AttackActivity"
             android:label="@string/title_activity_attack"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.migraineapp.MainActivity" />
@@ -32,6 +32,10 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.migraineapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".SleepActivity"
+            android:label="@string/title_activity_sleep" >
         </activity>
     </application>
 

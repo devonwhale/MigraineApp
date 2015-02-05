@@ -1,31 +1,30 @@
 package com.example.migraineapp;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 
-public class DailyActivity extends ActionBarActivity {
+public class SleepActivity extends ActionBarActivity {
+
+    EditText etTimeToBed = (EditText) findViewById(R.id.etTTB);
+    EditText etTimeUp = (EditText) findViewById(R.id.etTU);
+    EditText etSleepRating = (EditText) findViewById(R.id.etSR);
+    Button btnSubmit = (Button) findViewById(R.id.btnSub);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_daily);
+        setContentView(R.layout.activity_sleep);
 
-        Button but_Sleep = (Button) findViewById(R.id.btnSleep);
-        but_Sleep.setOnClickListener(new View.OnClickListener() {
-            /**
-             * Moves to the Daily Activity Recorder
-             * @param v The current view
-             */
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mv_daily = new Intent(getApplicationContext(), SleepActivity.class);
-                startActivity(mv_daily);
+                Sleeping s = new Sleeping(Long.parseLong(etTimeToBed.getText().toString()), Long.parseLong(etTimeUp.getText().toString()), Integer.parseInt(etSleepRating.getText().toString()));
             }
         });
     }
@@ -34,7 +33,7 @@ public class DailyActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_sleep, menu);
         return true;
     }
 
