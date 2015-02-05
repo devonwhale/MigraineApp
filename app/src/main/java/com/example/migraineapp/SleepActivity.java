@@ -25,6 +25,7 @@ public class SleepActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Sleeping s = new Sleeping(Long.parseLong(etTimeToBed.getText().toString()), Long.parseLong(etTimeUp.getText().toString()), Integer.parseInt(etSleepRating.getText().toString()));
+                //Steve to add code here
             }
         });
     }
