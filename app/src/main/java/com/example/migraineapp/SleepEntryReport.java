@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 /*
  When user clicks button to update SleepActivity,
@@ -12,10 +15,32 @@ import android.view.MenuItem;
  */
 public class SleepEntryReport extends ActionBarActivity {
 
+    TextView ttbField, tuField, rField;
+    //need database object declaring here (after database class added to app e.g. - DBClass db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sleep_entry_report);
+
+        setupGUI();
+        retrieveRow();
+    }
+
+    private void setupGUI(){
+        ttbField = (TextView)findViewById(R.id.updated_sleep_tt);
+        tuField = (TextView)findViewById(R.id.updated_sleep_tu);
+        rField = (TextView)findViewById(R.id.updated_sleep_r);
+    }
+
+    private void retrieveRow(){
+        ArrayList<Object> row;
+        //row = db. get row method in DB class ... parameters much match entered data.
+        /*
+        ttbField.setText((String)row.get(?));
+        tuField.setText((String)row.get(?));
+        rField.setText((String)row.get(?));
+         */
     }
 
 
