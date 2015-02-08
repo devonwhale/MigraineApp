@@ -12,16 +12,16 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "migraine.db";
 
-    //Sleeping Table Details
-    public static final String TABLE_SLEEPING = "sleeping";
+    //Sleep Table Details
+    public static final String TABLE_SLEEP = "sleeping";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_TIME_TO_BED = "time to bed";
     public static final String COLUMN_TIME_UP= "time up";
     public static final String COLUMN_SLEEP_RATING= "sleep rating";
-    public static final String[] COLUMNS_SlEEPING = {COLUMN_ID,COLUMN_TIME_TO_BED,COLUMN_TIME_UP,COLUMN_SLEEP_RATING};
+    public static final String[] COLUMNS_SlEEP = {COLUMN_ID,COLUMN_TIME_TO_BED,COLUMN_TIME_UP,COLUMN_SLEEP_RATING};
 
     private static final String CREATE_SLEEPING_TABLE = "CREATE TABLE " +
-            TABLE_SLEEPING + "("
+            TABLE_SLEEP + "("
             + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_TIME_TO_BED + " INTEGER,"
             + COLUMN_TIME_UP + " INTEGER,"
@@ -39,7 +39,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.w(MySQLiteHelper.class.getName(), "Upgrading from version" + oldVersion + " to "+ newVersion+", which will destroy old data");
-        db.execSQL("DROP TABLE IF EXISTS"+ TABLE_SLEEPING);
+        db.execSQL("DROP TABLE IF EXISTS"+ TABLE_SLEEP);
         onCreate(db);
     }
 }

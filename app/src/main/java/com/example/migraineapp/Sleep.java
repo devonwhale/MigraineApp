@@ -3,28 +3,28 @@ package com.example.migraineapp;
 /**
  * Created by Sumaia on 28/01/2015.
  */
-public class Sleeping {
+public class Sleep {
     private long id, time_to_bed, time_up;
     private int sleep_rating;
-    public Sleeping() {
+    public Sleep() {
         // Empty Constructor
     }
 
     // Constructors
-    public Sleeping(long time_to_bed, long time_up) {
+    public Sleep(long time_to_bed, long time_up) {
         this.time_to_bed = time_to_bed;
         this.time_up = time_up;
     }
 
     // Constructors
-    public Sleeping(long time_to_bed, long time_up, int sleep_rating) {
+    public Sleep(long time_to_bed, long time_up, int sleep_rating) {
         this.time_to_bed = time_to_bed;
         this.time_up = time_up;
         this.sleep_rating=sleep_rating;
     }
 
     // Constructors
-    public Sleeping(int sleep_rating){
+    public Sleep(int sleep_rating){
         this.sleep_rating=sleep_rating;
     }
 
@@ -64,6 +64,6 @@ public class Sleeping {
     }
 
     public String toString() {
-        return "Sleeping [ID: " + id + ", Time to bed: " + time_to_bed + ", Time Up: " + time_up + ", Sleep Rating " + sleep_rating  + "]" + "\n";
+        return "Sleep [ID: " + id + ", Time to bed: " + time_to_bed + ", Time Up: " + time_up + ", Sleep Rating " + sleep_rating  + "]" + "\n";
     }
 }

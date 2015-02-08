@@ -35,7 +35,8 @@
         </activity>
         <activity
             android:name=".SleepActivity"
-            android:label="@string/title_activity_sleep" >
+            android:label="@string/title_activity_sleep"
+            android:parentActivityName=".DailyActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.migraineapp.DailyActivity" />

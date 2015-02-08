@@ -3,6 +3,7 @@ package com.example.migraineapp;
 import android.app.DialogFragment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,7 +54,12 @@ public class SleepActivity extends ActionBarActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Sleeping s = new Sleeping(Long.parseLong(tvTimeToBed.getText().toString()), Long.parseLong(tvTimeUp.getText().toString()), Integer.parseInt(etSleepRating.getText().toString()));
+                Sleep s = new Sleep(Long.parseLong(tvTimeToBed.getText().toString()), Long.parseLong(tvTimeUp.getText().toString()), Integer.parseInt(etSleepRating.getText().toString()));
+                //Create Sleep Data Access Object Instance
+                SleepDAO dao = new SleepDAO(SleepActivity.this);
+                //Enter sleep record into database
+                dao.createSleepingRecord(s);
+                Log.d("Sleep ", "Sleep Record Added");
                 //Steve to add code here
             }
         });
