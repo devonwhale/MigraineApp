@@ -11,15 +11,20 @@ import android.widget.EditText;
 
 public class SleepActivity extends ActionBarActivity {
 
-    EditText etTimeToBed = (EditText) findViewById(R.id.etTTB);
-    EditText etTimeUp = (EditText) findViewById(R.id.etTU);
-    EditText etSleepRating = (EditText) findViewById(R.id.etSR);
-    Button btnSubmit = (Button) findViewById(R.id.btnSub);
+    EditText etTimeToBed;
+    EditText etTimeUp;
+    EditText etSleepRating;
+    Button btnSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sleep);
+
+        etTimeToBed = (EditText) findViewById(R.id.etTTB);
+        etTimeUp = (EditText) findViewById(R.id.etTU);
+        etSleepRating = (EditText) findViewById(R.id.etSR);
+        btnSubmit = (Button) findViewById(R.id.btnSub);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override

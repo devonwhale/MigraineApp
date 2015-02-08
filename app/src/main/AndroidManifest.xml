@@ -38,7 +38,7 @@
             android:label="@string/title_activity_sleep" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.migraineapp.MainActivity" />
+                android:value="com.example.migraineapp.DailyActivity" />
         </activity>
         <activity
             android:name=".SleepEntryReport"
