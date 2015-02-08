@@ -73,7 +73,7 @@ public class MainActivity extends ActionBarActivity implements LoginPopup.LoginP
 
         if (id == R.id.action_login) {
             DialogFragment d = new LoginPopup();
-            //d.show(getSupportFragmentManager(), "LoginPopup");
+            d.show(getFragmentManager(), "LoginPopup");
         }
 
         if (id == R.id.action_help) {

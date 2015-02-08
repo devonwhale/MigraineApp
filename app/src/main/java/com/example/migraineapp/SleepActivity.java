@@ -1,5 +1,6 @@
 package com.example.migraineapp;
 
+import android.app.DialogFragment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,12 +8,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.Calendar;
 
 
 public class SleepActivity extends ActionBarActivity {
 
-    EditText etTimeToBed;
-    EditText etTimeUp;
+    TextView tvTimeToBed;
+    TextView tvTimeUp;
     EditText etSleepRating;
     Button btnSubmit;
 
@@ -21,15 +25,35 @@ public class SleepActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sleep);
 
-        etTimeToBed = (EditText) findViewById(R.id.etTTB);
-        etTimeUp = (EditText) findViewById(R.id.etTU);
+        tvTimeToBed = (TextView) findViewById(R.id.etTTB);
+        tvTimeUp = (TextView) findViewById(R.id.etTU);
         etSleepRating = (EditText) findViewById(R.id.etSR);
         btnSubmit = (Button) findViewById(R.id.btnSub);
+
+        tvTimeToBed.setText(Calendar.HOUR_OF_DAY + ": " + Calendar.MINUTE);
+
+        tvTimeUp.setText(Calendar.HOUR_OF_DAY + ": " + Calendar.MINUTE);
+
+        tvTimeToBed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new TimePickerFragment();
+                newFragment.show(getFragmentManager(), "timePicker");
+            }
+        });
+
+        tvTimeUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new TimePickerFragment();
+                newFragment.show(getFragmentManager(), "timePicker");
+            }
+        });
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Sleeping s = new Sleeping(Long.parseLong(etTimeToBed.getText().toString()), Long.parseLong(etTimeUp.getText().toString()), Integer.parseInt(etSleepRating.getText().toString()));
+                Sleeping s = new Sleeping(Long.parseLong(tvTimeToBed.getText().toString()), Long.parseLong(tvTimeUp.getText().toString()), Integer.parseInt(etSleepRating.getText().toString()));
                 //Steve to add code here
             }
         });
