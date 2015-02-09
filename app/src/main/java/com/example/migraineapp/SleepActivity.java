@@ -97,20 +97,7 @@ public class SleepActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    protected Dialog onCreateDialog(int id){
-        switch(id){
-            case time_dialog_id_1:
-                return new TimePickerDialog(this, startTimeSetListener,
-                        hour, minute, true);
-
-            case time_dialog_id_2:
-                return new TimePickerDialog(this, endTimeSetListener,
-                        hour, minute, true);
-
-        return null;
-    }
-
-
+    //Below are all the methods that have to do with Time Picker Dialogs
     private TimePickerDialog.OnTimeSetListener startTimeSetListener =
             new TimePickerDialog.OnTimeSetListener() {
                 public void onTimeSet(TimePicker view, int hourOfDay, int hour_minute) {
@@ -128,4 +115,19 @@ public class SleepActivity extends ActionBarActivity {
                     Toast.makeText(getBaseContext(), "Time set: "+endHour+":"+endMinute, Toast.LENGTH_LONG).show();
                 }
             };
+
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+            case time_dialog_id_1:
+                return new TimePickerDialog(this, startTimeSetListener,
+                        hour, minute, true);
+
+            case time_dialog_id_2:
+                return new TimePickerDialog(this, endTimeSetListener,
+                        hour, minute, true);
+        }
+            return null;
+        }
+
 }
+
