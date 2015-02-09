@@ -1,6 +1,8 @@
 package com.example.migraineapp;
 
+import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.TimePickerDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -20,6 +24,11 @@ public class SleepActivity extends ActionBarActivity {
     TextView tvTimeUp;
     EditText etSleepRating;
     Button btnSubmit;
+
+    static final int time_dialog_id_1 = 0;
+    static final int time_dialog_id_2 = 1;
+    int hour,minute,startHour, startMinute, endHour,endMinute;
+    int year, month,day, currentYear, currentMonth, currentDay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,4 +96,36 @@ public class SleepActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    protected Dialog onCreateDialog(int id){
+        switch(id){
+            case time_dialog_id_1:
+                return new TimePickerDialog(this, startTimeSetListener,
+                        hour, minute, true);
+
+            case time_dialog_id_2:
+                return new TimePickerDialog(this, endTimeSetListener,
+                        hour, minute, true);
+
+        return null;
+    }
+
+
+    private TimePickerDialog.OnTimeSetListener startTimeSetListener =
+            new TimePickerDialog.OnTimeSetListener() {
+                public void onTimeSet(TimePicker view, int hourOfDay, int hour_minute) {
+                    startHour = hourOfDay;
+                    startMinute = hour_minute;
+                    Toast.makeText(getBaseContext(), "Time set: " + startHour + ":" + startMinute, Toast.LENGTH_LONG).show();
+                }
+            };
+
+    private TimePickerDialog.OnTimeSetListener endTimeSetListener =
+            new TimePickerDialog.OnTimeSetListener() {
+                public void onTimeSet(TimePicker view, int hourOfDay, int hour_minute) {
+                    endHour = hourOfDay;
+                    endMinute = hour_minute;
+                    Toast.makeText(getBaseContext(), "Time set: "+endHour+":"+endMinute, Toast.LENGTH_LONG).show();
+                }
+            };
 }
