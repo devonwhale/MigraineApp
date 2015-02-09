@@ -40,9 +40,12 @@ public class SleepActivity extends ActionBarActivity {
         etSleepRating = (EditText) findViewById(R.id.etSR);
         btnSubmit = (Button) findViewById(R.id.btnSub);
 
-        tvTimeToBed.setText(Calendar.HOUR_OF_DAY + ": " + Calendar.MINUTE);
+        //per Yang - but still shows 11:12 as default time
+        Calendar rightnow = Calendar.getInstance();
 
-        tvTimeUp.setText(Calendar.HOUR_OF_DAY + ": " + Calendar.MINUTE);
+        tvTimeToBed.setText(rightnow.HOUR_OF_DAY + ": " + rightnow.MINUTE);
+
+        tvTimeUp.setText(rightnow.HOUR_OF_DAY + ": " + rightnow.MINUTE);
 
         tvTimeToBed.setOnClickListener(new View.OnClickListener() {
             @Override
